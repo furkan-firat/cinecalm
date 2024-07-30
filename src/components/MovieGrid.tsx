@@ -128,7 +128,7 @@ const MovieGrid: React.FC = () => {
               <Select
                 size='small'
                 value={type}
-                onChange={(e) => setType(e.target.value as string)} // Update local state
+                onChange={(e) => setType(e.target.value as string)}
                 sx={{ marginRight: 2 }}
               >
                 <MenuItem value='movie'>Movies</MenuItem>
