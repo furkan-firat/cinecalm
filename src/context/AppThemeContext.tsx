@@ -22,7 +22,7 @@ type AppThemeProviderProps = {
 
 export function AppThemeProvider({ children }: AppThemeProviderProps) {
   const storedMode =
-    localStorage.getItem('appTheme') === 'dark' ? 'dark' : 'light'; // Updated to reflect 'light' or 'dark'
+    localStorage.getItem('appTheme') === 'light' ? 'light' : 'dark';
   const [mode, setMode] = useState<'light' | 'dark'>(storedMode);
 
   useEffect(() => {
