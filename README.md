@@ -1,5 +1,7 @@
 # CineCalm
 
+#### **LIVE DEMO:** [CineCalm](https://cinecalm.netlify.app/)
+
 **CineCalm** is a movie application developed using **React** and **TypeScript**. This app allows users to **search** for movies, view detailed information about each movie, and **filter** results based on various criteria. It's a **modern**, **responsive** application built with **Material-UI** components to provide a user-friendly interface.
 
 ![CineCalm Screenshot](/cinecalm-preview.png)
