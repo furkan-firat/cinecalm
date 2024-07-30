@@ -49,7 +49,6 @@ const MovieGrid: React.FC = () => {
           `http://www.omdbapi.com/?s=${searchQuery}&y=${filterYear}&type=${filterType}&page=${page}&apikey=${API_KEY}`
         );
         setMovies(response.data.Search || []);
-        console.log(response.data);
         setTotalPages(Math.ceil(response.data.totalResults / 10));
       } catch (error) {
         setError('An error occurred while fetching data.');
