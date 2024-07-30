@@ -11,11 +11,11 @@ import {
   IconButton,
   Slide,
   Grid,
-  Skeleton,
   Rating,
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { MovieDetails } from '../types.ts';
+import MovieDetailsSkeleton from './MovieDetailSkeleton.tsx';
 
 type MovieDetailsModalProps = {
   open: boolean;
@@ -193,60 +193,7 @@ const MovieDetailsModal: React.FC<MovieDetailsModalProps> = ({
             </Grid>
           </Grid>
         ) : (
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={4}>
-              <Skeleton variant='rectangular' width='100%' height={400} />
-            </Grid>
-            <Grid item xs={12} md={8}>
-              <Card sx={{ boxShadow: 0 }}>
-                <CardContent>
-                  <Skeleton variant='text' width='60%' height={40} />
-                  <Skeleton
-                    variant='text'
-                    width='80%'
-                    height={30}
-                    sx={{ mt: 2 }}
-                  />
-                  <Skeleton
-                    variant='text'
-                    width='80%'
-                    height={30}
-                    sx={{ mt: 2 }}
-                  />
-                  <Skeleton
-                    variant='text'
-                    width='80%'
-                    height={30}
-                    sx={{ mt: 2 }}
-                  />
-                  <Skeleton
-                    variant='text'
-                    width='80%'
-                    height={30}
-                    sx={{ mt: 2 }}
-                  />
-                  <Skeleton
-                    variant='text'
-                    width='80%'
-                    height={30}
-                    sx={{ mt: 2 }}
-                  />
-                  <Skeleton
-                    variant='text'
-                    width='80%'
-                    height={30}
-                    sx={{ mt: 2 }}
-                  />
-                  <Skeleton
-                    variant='text'
-                    width='80%'
-                    height={30}
-                    sx={{ mt: 2 }}
-                  />
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
+          <MovieDetailsSkeleton />
         )}
       </DialogContent>
     </Dialog>

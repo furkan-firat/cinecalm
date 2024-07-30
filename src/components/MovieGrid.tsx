@@ -14,7 +14,6 @@ import {
   Button,
   Collapse,
   TextField,
-  Skeleton,
   Container,
   Divider,
 } from '@mui/material';
@@ -22,6 +21,7 @@ import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import { useSearch } from '../context/SearchContext.tsx';
 import { Movie, MovieDetails } from '../types.ts';
 import MovieDetailsModal from './MovieDetailsModal.tsx';
+import MovieSkeleton from './MovieSkeleton.tsx';
 
 const MovieGrid: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -154,29 +154,7 @@ const MovieGrid: React.FC = () => {
         {error ? (
           <Typography color='error'>Error: {error}</Typography>
         ) : loading ? (
-          <Grid container spacing={3}>
-            {Array.from(new Array(8)).map((_, index) => (
-              <Grid item xs={12} sm={6} md={4} lg={3} xl={3} key={index}>
-                <Card
-                  sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: '100%',
-                  }}
-                >
-                  <Skeleton variant='rectangular' height={350} />
-                  <CardContent sx={{ flexGrow: 1 }}>
-                    <Skeleton
-                      variant='text'
-                      sx={{ fontSize: '1.5rem', mb: 1 }}
-                    />
-                    <Skeleton variant='text' sx={{ fontSize: '1rem' }} />
-                    <Skeleton variant='text' sx={{ fontSize: '1rem' }} />
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
+          <MovieSkeleton />
         ) : movies.length === 0 ? (
           <Typography variant='h5'>No movies found.</Typography>
         ) : (
