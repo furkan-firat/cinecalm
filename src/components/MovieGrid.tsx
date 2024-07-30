@@ -46,7 +46,7 @@ const MovieGrid: React.FC = () => {
       setError(null);
       try {
         const response = await axios.get(
-          `http://www.omdbapi.com/?s=${searchQuery}&y=${filterYear}&type=${filterType}&page=${page}&apikey=${API_KEY}`
+          `https://www.omdbapi.com/?s=${searchQuery}&y=${filterYear}&type=${filterType}&page=${page}&apikey=${API_KEY}`
         );
         setMovies(response.data.Search || []);
         setTotalPages(Math.ceil(response.data.totalResults / 10));
@@ -80,7 +80,7 @@ const MovieGrid: React.FC = () => {
     setModalOpen(true);
     try {
       const response = await axios.get(
-        `http://www.omdbapi.com/?i=${id}&apikey=${API_KEY}`
+        `https://www.omdbapi.com/?i=${id}&apikey=${API_KEY}`
       );
       setSelectedMovie(response.data);
     } catch (error) {
